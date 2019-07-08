@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Welcome from './components/Welcome'
 
 ReactDOM.render(
-  <App/>,
+  <Welcome name="D-studio"/>,
   document.getElementById('root')
 )
