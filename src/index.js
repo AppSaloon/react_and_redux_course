@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ClickCounter from './components/ClickCounter'
+import Ticker from './components/Ticker'
 
 ReactDOM.render(
-  <ClickCounter defaultValue={5}/>,
+  <Ticker/>,
   document.getElementById('root')
 )
