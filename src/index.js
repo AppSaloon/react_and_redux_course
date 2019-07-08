@@ -1,8 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Shop from './components/Shop/Shop'
+import './index.scss'
 
 ReactDOM.render(
-  <App/>,
+  <Shop/>,
   document.getElementById('root')
 )

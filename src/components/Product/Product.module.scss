@@ -1,0 +1,37 @@
+.container {
+  width: 400px;
+  background-color: antiquewhite;
+  border-radius: 5px;
+  padding: 8px;
+  box-shadow: 0 8px 8px darkgray;
+  margin-bottom: 32px;
+  margin-right: 32px;
+}
+
+.body {
+  display: flex;
+  height: 150px;
+  margin-bottom: 8px;
+
+  .image {
+
+  }
+
+  .description {
+    margin-left: 12px;
+    overflow-y: scroll;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+
+  .addButton {
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      color: dodgerblue;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  background-color: darkgray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
