@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import ClickCounter from './components/ClickCounter'
 
 ReactDOM.render(
-  <App/>,
+  <ClickCounter defaultValue={5}/>,
   document.getElementById('root')
 )
