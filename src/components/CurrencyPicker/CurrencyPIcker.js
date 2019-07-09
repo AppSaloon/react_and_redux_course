@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class CurrencyPIcker extends Component {
+class CurrencyPicker extends Component {
 
   handleChange = (event) => {
     const currency = event.target.value
@@ -21,4 +21,4 @@ class CurrencyPIcker extends Component {
   }
 }
 
-export default CurrencyPIcker
+export default CurrencyPicker
