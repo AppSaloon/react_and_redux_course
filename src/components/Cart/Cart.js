@@ -3,6 +3,7 @@ import classes from './Cart.module.scss'
 import Product from '../Product/Product'
 import { connect } from 'react-redux'
 import { setShowShoppingCart } from '../../redux/appState/actions'
+import * as shopConnector from '../../connectors/shop'
 
 class Cart extends Component {
 
@@ -10,10 +11,15 @@ class Cart extends Component {
     this.props.setShowShoppingCart(!this.props.showShoppingCart)
   }
 
+  handleCheckout = () => {
+    shopConnector.submitOrder()
+  }
+  
   render () {
     const {
       cart,
       showShoppingCart,
+      checkingOut,
     } = this.props
 
     const items = cart.length
@@ -27,6 +33,11 @@ class Cart extends Component {
               <div className={classes.cart}>
                 <div className={classes.header}>
                   <h2>Items in shopping cart:</h2>
+                  {
+                    Boolean(!checkingOut && cart.length) && (
+                      <h2 className={classes.button} onClick={this.handleCheckout}>submit your order</h2>
+                    )
+                  }
                   <h2 onClick={this.toggleCart} className={classes.button}>X</h2>
                 </div>
                 <div className={classes.products}>
@@ -55,6 +66,7 @@ class Cart extends Component {
 const mapStateToProps = ({appState, cartState}) => ({
   showShoppingCart: appState.showShoppingCart,
   cart: cartState.cart,
+  checkingOut: cartState.checkingOut,
 })
 
 const mapDispatchToProps = dispatch => ({

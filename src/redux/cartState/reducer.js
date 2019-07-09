@@ -1,5 +1,6 @@
 const defaultState = {
   cart: [],
+  checkingOut: false,
 }
 
 export default (state = defaultState, action) => {
@@ -13,6 +14,16 @@ export default (state = defaultState, action) => {
 
     case 'REMOVE_ITEM_INDEX': {
       newState.cart = state.cart.filter((item, index) => index !== action.index)
+      return newState
+    }
+
+    case 'SET_CHECKING_OUT': {
+      newState.checkingOut = action.checkingOut
+      return newState
+    }
+
+    case 'CHECKOUT': {
+      newState.cart = []
       return newState
     }
 
