@@ -8,7 +8,13 @@ class Body extends Component {
       <div className={classes.container}>
         {
           this.props.products.map((product) => (
-            <Product {...product} />
+            <Product
+              key={product.id}
+              product={product}
+              addToCart={this.props.addToCart}
+              currency={this.props.currency}
+              rates={this.props.rates}
+            />
           ))
         }
       </div>
