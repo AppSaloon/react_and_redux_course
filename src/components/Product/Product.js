@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import classes from './Product.module.scss'
+import { connect } from 'react-redux'
+import { addItem, removeItemIndex } from '../../redux/cartState/actions'
+
 
 class Product extends Component {
 
   handleClick = () => {
     if(this.props.inShoppingCart) {
-      this.props.removeFromCart(this.props.index)
+      this.props.removeItemIndex(this.props.index)
     } else {
-      this.props.addToCart(this.props.product)
+      this.props.addItem(this.props.product)
     }
   }
 
@@ -58,4 +61,14 @@ class Product extends Component {
   }
 }
 
-export default Product
+const mapStateToProps = ({appState}) => ({
+  currency: appState.currency,
+  rates: appState.rates,
+})
+
+const mapDispatchToProps = dispatch => ({
+  addItem: (item) => dispatch(addItem(item)),
+  removeItemIndex: (index) => dispatch(removeItemIndex(index)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Product)

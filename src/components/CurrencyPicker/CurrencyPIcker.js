@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import { setCurrency } from '../../redux/appState/actions'
+import { connect } from 'react-redux'
 
-class CurrencyPIcker extends Component {
+
+class CurrencyPicker extends Component {
 
   handleChange = (event) => {
     const currency = event.target.value
@@ -12,13 +15,24 @@ class CurrencyPIcker extends Component {
       <div>
         <span>Currency: </span>
         <select value={this.props.currency} onChange={this.handleChange}>
-          <option value="EUR">EUR</option>
-          <option value="GBP">GBP</option>
-          <option value="USD">USD</option>
+          {
+            Object.keys(this.props.rates).map((currency, index) => (
+              <option value={currency} key={index}>{currency}</option>
+            ))
+          }
         </select>
       </div>
     )
   }
 }
 
-export default CurrencyPIcker
+const mapStateToProps = ({appState}) => ({
+  rates: appState.rates,
+  currency: appState.currency,
+})
+
+const mapDispatchToProps = dispatch => ({
+  setCurrency: (currency) => dispatch(setCurrency(currency)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CurrencyPicker)

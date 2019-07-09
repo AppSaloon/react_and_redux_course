@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 import classes from './Body.module.scss'
 import Product from '../Product/Product'
+import { connect } from 'react-redux'
 
 class Body extends Component {
   render () {
     return (
       <div className={classes.container}>
         {
-          this.props.products.map((product) => (
+          this.props.products.map((product, index) => (
             <Product
-              key={product.id}
+              key={index}
               product={product}
-              addToCart={this.props.addToCart}
-              currency={this.props.currency}
-              rates={this.props.rates}
             />
           ))
         }
@@ -22,4 +20,8 @@ class Body extends Component {
   }
 }
 
-export default Body
+const mapStateToProps = ({appState}) => ({
+  products: appState.products,
+})
+
+export default connect(mapStateToProps)(Body)
