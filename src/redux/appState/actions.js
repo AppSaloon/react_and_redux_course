@@ -1,9 +1,11 @@
-export const setShowShoppingCart = (showShoppingCart) => ({
-  type: 'SET_SHOW_SHOPPING_CART',
-  showShoppingCart,
+export const increase = () => ({
+  type: 'INCREASE',
 })
 
-export const setCurrency = (currency) => ({
-  type: 'SET_CURRENCY',
-  currency,
+export const reset = () => ({
+  type: 'RESET',
+})
+
+export const decrease = () => ({
+  type: 'DECREASE',
 })
