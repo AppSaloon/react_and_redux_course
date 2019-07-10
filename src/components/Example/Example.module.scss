@@ -1,0 +1,12 @@
+.root {
+  h2 {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    &:hover {
+      color: dodgerblue;
+    }
+  }
+}
