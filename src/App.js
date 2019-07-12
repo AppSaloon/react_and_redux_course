@@ -1,6 +1,6 @@
 import React from 'react'
 import InlineStyle from './components/InlineStyle/InlineStyle'
-import StylesheetModule from './components/Stylesheet/StylesheetModule'
+import StylesheetModule from './components/StylesheetModule/StylesheetModule'
 import SASS from './components/SASS/SASS'
 import SASSModule from './components/SASSModule/SASSModule'
 import WithStyles from './components/WithStyles/WithStyles'
