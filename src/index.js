@@ -1,8 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Ticker from './components/Ticker'
+import App from './App'
 
 ReactDOM.render(
-  <Ticker/>,
+  <App/>,
   document.getElementById('root')
 )
